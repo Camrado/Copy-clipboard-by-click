@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+<title>Как скопировать адрес страницы в буфер обмена</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link href="style.css" type="text/css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
+<script>
+jQuery(document).ready(function($){
+var url = document.location.href;
+new Clipboard('.copy_link', {text: function(){ return url;}});
+$('.copy_k').click(function(){alert('Cсылка успешно скопирована в буфер обмена.');});
+});
+</script>
+<style>
+html {
+    min-height: 100%
+    }
+body {
+    min-height: 100%;
+	margin:0;
+	padding:0;
+	font: 15px Tahoma;
+	color:#555;
+    }
+ 
+.copy_link{cursor:pointer;display:inline-block;padding:0 10px;line-height:25px;background:#fc0;color:#000;}
+.copy_link:hover{opacity:0.7;}
+textarea {font-size:20px;}
+</style>
+</head>
+<body>
+<center>
+<h1>Скопировать адрес страницы в буфер обмена</h1>
+<span class="copy_link copy_k">Копировать ссылку с уведомлением</span>
+<h2>После нажатия на кнопку, можете попробовать вставить в текстовое поле то что у вас в буфере обмена</h2>
+<textarea  name="copylink" id="copylink" rows="10" cols="100"></textarea>
+</center>
+
+
+</body>
+</html>
